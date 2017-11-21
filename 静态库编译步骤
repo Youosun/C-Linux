@@ -1,0 +1,5 @@
+1、gcc -c add.c
+2、ar crsv libadd.c add.o
+3、gcc -o main main.c -ladd
+	在未将静态库文件拷贝至/lib或/usr/lib目录时
+	加上-L[库文件路径]指定库文件所在路径

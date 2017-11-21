@@ -1,0 +1,5 @@
+gcc -fpic -Wall -c main.c  生成main.o文件
+gcc -shared -o libadd.so main.o 生成动态库文件
+gcc -o main main.c -ladd
+	如果未将libadd.so文件拷贝到/lib或/usr/lib目录下，编译可执行文件时需要加     -L[路径名]选项  这样可以编译通过 生成main可执行文件
+	但当main程序运行时  libadd.so文件必须要拷贝到上述文件夹中（原理为程序执行时引用动态链接库具有默认的库文件搜索路径LD_LIBRARY_PATH环境变量指定)
